@@ -40,7 +40,6 @@ add_action('acp/column_types', static function (ListScreen $list_screen) {
 
     require_once(__DIR__ . '/classes/Column/MediaFileSize.php');
     require_once(__DIR__ . '/classes/Editing/MediaFileSize.php');
-    require_once(__DIR__ . '/classes/Sorting/MediaFileSize.php');
 
     $list_screen->register_column_type(new Column\MediaFileSize());
 });
