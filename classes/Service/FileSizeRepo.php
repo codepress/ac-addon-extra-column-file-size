@@ -26,15 +26,13 @@ class FileSizeRepo
 
         $file = new SplFileInfo($file_path);
 
-        $file_size = $file->getSize();
-
-        if ( ! $file->isFile() || ! $file->isReadable() || ! $file_size) {
+        if ( ! $file->isFile() || ! $file->isReadable() || ! $file->getSize()) {
             $this->storage->delete($file_id);
 
             return;
         }
 
-        $this->storage->save($file_id, $file_size);
+        $this->storage->save($file_id, $file->getSize());
     }
 
 }
